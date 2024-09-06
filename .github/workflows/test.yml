@@ -6,11 +6,6 @@ on:
     workflows: ["Build"]
     types:
       - completed
-    branches:
-      - "*"
-  pull_request:
-    branches:
-    - '*'
 
 
 defaults:
