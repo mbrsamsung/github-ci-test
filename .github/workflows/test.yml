@@ -31,3 +31,7 @@ jobs:
     - name: test
       run: |
         cat build.txt
+
+    - name: release
+      run: |
+        echo "RELEASE!"
