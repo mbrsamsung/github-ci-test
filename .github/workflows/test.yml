@@ -15,9 +15,13 @@ jobs:
   tests:
     name: pytests
     runs-on: ubuntu-22.04
-    if: github.event_name == 'push' && contains(github.event.ref, '/tags/')  # Only runs if the original event was a tag
+    # if: github.event_name == 'push' && contains(github.event.ref, '/tags/')  # Only runs if the original event was a tag
   
     steps:
+    - name: Print all github.event context
+      run: |
+          echo "Printing github.event context:"
+          echo "${{ toJson(github.event) }}"
 
     - name: Fetch build artifact
       uses: actions/download-artifact@v4
