@@ -6,8 +6,6 @@ on:
     workflows: ["Build"]
     types:
       - completed
-    branches:
-      - main
 
 defaults:
   run:
