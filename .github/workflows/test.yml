@@ -6,7 +6,8 @@ on:
     workflows: ["Build"]
     types:
       - completed
-
+    branches:
+      - main
 
 defaults:
   run:
@@ -16,6 +17,8 @@ jobs:
   tests:
     name: pytests
     runs-on: ubuntu-22.04
+    if: startsWith(github.event.workflow_run.head_commit.ref, 'refs/tags/')  # Only runs if the original event was a tag
+  
     steps:
 
     - name: Fetch build artifact
