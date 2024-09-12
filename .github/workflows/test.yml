@@ -15,7 +15,7 @@ jobs:
   tests:
     name: pytests
     runs-on: ubuntu-22.04
-    if: startsWith(github.event.workflow_run.head_commit.ref, 'refs/tags/')  # Only runs if the original event was a tag
+    if: github.event_name == 'push' && contains(github.event.ref, '/tags/')  # Only runs if the original event was a tag
   
     steps:
 
