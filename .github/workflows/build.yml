@@ -39,6 +39,11 @@ jobs:
       with:
         name: build-artifacts
 
+    - name: Print all github context
+      run: |
+          echo "Printing github.event context:"
+          echo "${{ toJson(github) }}"
+
     - name: test
       run: |
         cat build.txt
