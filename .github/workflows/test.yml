@@ -22,6 +22,12 @@ jobs:
       run: |
           echo "Printing github.event context:"
           echo "${{ toJson(github.event) }}"
+  
+    - name: Print all github context
+      run: |
+          echo "Printing github.event context:"
+          echo "${{ toJson(github) }}"
+
 
     - name: Fetch build artifact
       uses: actions/download-artifact@v4
